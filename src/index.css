@@ -6,8 +6,9 @@ body {
 }
 
 @font-face {
+  font-display: swap;
   font-family: 'SEGA LOGO FONT';
   font-style: normal;
   font-weight: normal;
-  src: local('SEGA LOGO FONT'), url('containers/SEGA.woff') format('woff');
+  src: local('SEGA LOGO FONT'), url('components/SEGA.woff') format('woff');
 }

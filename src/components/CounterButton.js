@@ -1,6 +1,6 @@
 import React from "react"
 
-class CounterButton extends React.PureComponent{
+class CounterButton extends React.Component {
     constructor(props){
         super(props);
         this.state = {
@@ -8,11 +8,11 @@ class CounterButton extends React.PureComponent{
         }
     }
 
-    // shouldComponentUpdate(nextProps, nextState) {
-    //     let propsUpdated = nextProps.color !== "red";
-    //     let stateUpdated = nextState.count !== this.state.count;
-    //     return propsUpdated || stateUpdated
-    // }
+    shouldComponentUpdate(nextProps, nextState) {
+        let propsUpdated = nextProps.color !== "red";
+        let stateUpdated = nextState.count !== this.state.count;
+        return propsUpdated || stateUpdated
+    }
 
     updateCount = () => {
         this.setState((prevState)=>({count: prevState.count + 1}))
@@ -20,7 +20,7 @@ class CounterButton extends React.PureComponent{
 
     render() {
         return(
-            <button color={this.props.color} onClick={this.updateCount}>Count: {this.state.count}</button>
+            <button id={"counter"} color={this.props.color} onClick={this.updateCount}>Count: {this.state.count}</button>
         )
     }
 }

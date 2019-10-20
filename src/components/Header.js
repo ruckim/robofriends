@@ -2,9 +2,6 @@ import React from "react"
 import CounterButton from "./CounterButton";
 
 class Header extends React.PureComponent {
-    shouldComponentUpdate(nextProps, nextState) {
-        return false;
-    }
 
     render() {
         return (
