@@ -1,4 +1,4 @@
-import React, {Dispatch} from "react"
+import React from "react"
 import {connect} from "react-redux";
 import "../components/MainPage.css"
 import {requestRobots, setSearchField} from "../actions";

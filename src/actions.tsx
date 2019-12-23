@@ -1,6 +1,5 @@
 import {CHANGE_SEARCHFIELD, REQUEST_ROBOTS_FAILED, REQUEST_ROBOTS_PENDING, REQUEST_ROBOTS_SUCCESS} from "./constants";
 import {apiCall} from "./api/api";
-import {Dispatch} from "react";
 
 type Action = {
     type: string;
