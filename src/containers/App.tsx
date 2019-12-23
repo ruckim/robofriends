@@ -1,8 +1,8 @@
-import React from "react"
+import React, {Dispatch} from "react"
 import {connect} from "react-redux";
 import "../components/MainPage.css"
 import {requestRobots, setSearchField} from "../actions";
-import MainPage from "../components/MainPage";
+import MainPage, {IRobot} from "../components/MainPage";
 
 const mapStateToProps = state => {
     return {
@@ -14,11 +14,22 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = (dispatch) => ({
-    onSearchChange: (event) => dispatch(setSearchField(event.target.value)),
+    onSearchChange: (event: React.SyntheticEvent<HTMLInputElement>) => dispatch(setSearchField(event.target.value)),
     onRequestRobots: () => dispatch(requestRobots())
 });
 
-class App extends React.Component {
+interface IAppProps {
+    searchField: string,
+    robots: IRobot[],
+    isPending: boolean,
+    error: string,
+    onSearchChange(event: React.SyntheticEvent<HTMLInputElement>)
+}
+
+interface IAppState {
+}
+
+class App extends React.Component<IAppProps, IAppState> {
     render() {
         return(<MainPage {...this.props}/>)
     }
