@@ -1,21 +1,21 @@
 import React from "react"
 
 class CounterButton extends React.Component<any,any> {
-    constructor(props){
+    constructor(props: any){
         super(props);
         this.state = {
             count: 0
         }
     }
 
-    shouldComponentUpdate(nextProps, nextState) {
+    shouldComponentUpdate(nextProps: any, nextState: any) {
         let propsUpdated = nextProps.color !== "red";
         let stateUpdated = nextState.count !== this.state.count;
         return propsUpdated || stateUpdated
     }
 
     updateCount = () => {
-        this.setState((prevState)=>({count: prevState.count + 1}))
+        this.setState((prevState: any)=>({count: prevState.count + 1}))
     };
 
     render() {

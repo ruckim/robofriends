@@ -11,7 +11,7 @@ const initialStateRobots = {
 };
 
 
-export const searchRobots = (state = initialStateSearch, action = {}) => {
+export const searchRobots = (state = initialStateSearch, action: any = {}) => {
     switch (action.type) {
         case CHANGE_SEARCHFIELD:
             return Object.assign({}, state, {searchField: action.payload});
@@ -20,7 +20,7 @@ export const searchRobots = (state = initialStateSearch, action = {}) => {
     }
 };
 
-export const requestRobots = (state = initialStateRobots, action = {}) => {
+export const requestRobots = (state = initialStateRobots, action: any = {}) => {
     switch (action.type) {
         case REQUEST_ROBOTS_PENDING:
             return Object.assign({}, state, {isPending: true});
